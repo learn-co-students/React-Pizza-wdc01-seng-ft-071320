@@ -59,8 +59,17 @@ class App extends Component {
     return (
       <Fragment>
         <Header/>
-        <PizzaForm editPizza={this.state.editPizza} submit={this.handleSubmit} toppingChange={this.onToppingChange} sizeChange={this.onSizeChange} vegChange={this.onVegetarianChange}/>
-        <PizzaList pizzas={this.state.pizzas} edit={this.handleEdit}/>
+        <PizzaForm 
+            editPizza={this.state.editPizza} 
+            submit={this.handleSubmit} 
+            toppingChange={this.onToppingChange} 
+            sizeChange={this.onSizeChange} 
+            vegChange={this.onVegetarianChange}
+        />
+        <PizzaList 
+            pizzas={this.state.pizzas} 
+            edit={this.handleEdit}
+        />
       </Fragment>
     );
   }

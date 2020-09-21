@@ -2,9 +2,9 @@
   "pizzas": [
     {
       "id": 1,
-      "topping": "Plain ",
-      "size": "Small",
-      "vegetarian": true
+      "topping": "Plain Test",
+      "size": "Medium",
+      "vegetarian": false
     },
     {
       "id": 2,
