@@ -18,6 +18,16 @@ class App extends Component {
     this.setState({editPizza: pizza})
   }
   
+  onChange = (e) => {
+    let name = e.target.name
+    let value = e.target.value
+    this.setState({
+      editPizza: {
+        ...this.state.editPizza,
+        [name]: value
+      }
+    })
+  }
   onToppingChange = (value) => {
     this.setState({ editPizza: {...this.state.editPizza, topping: value}})
   }
@@ -62,8 +72,9 @@ class App extends Component {
         <PizzaForm 
             editPizza={this.state.editPizza} 
             submit={this.handleSubmit} 
-            toppingChange={this.onToppingChange} 
-            sizeChange={this.onSizeChange} 
+            // toppingChange={this.onToppingChange} 
+            // sizeChange={this.onSizeChange} 
+            onChange={ this.onChange }
             vegChange={this.onVegetarianChange}
         />
         <PizzaList 

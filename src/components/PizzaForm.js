@@ -5,12 +5,12 @@ const PizzaForm = (props) => {
   return(
       <div className="form-row">
         <div className="col-5">
-            <input type="text" className="form-control" placeholder="Pizza Topping" value={
+            <input type="text" className="form-control" name="topping" placeholder="Pizza Topping" value={
                 pizza ? pizza.topping : null
-              } onChange={(e)=> props.toppingChange(e.target.value)}/>
+              } onChange={ props.onChange }/>
         </div>
         <div className="col">
-          <select value={pizza ? pizza.size: null} onChange={(e) => props.sizeChange(e.target.value)} className="form-control">
+          <select value={pizza ? pizza.size: null} name = "size" onChange={ props.onChange } className="form-control">
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>
             <option value="Large">Large</option>
@@ -18,13 +18,13 @@ const PizzaForm = (props) => {
         </div>
         <div className="col">
           <div className="form-check">
-            <input className="form-check-input" type="radio" value="Vegetarian" checked={pizza ? pizza.vegetarian : null} onChange={(e) => props.vegChange(e.target.value)}/>
+            <input className="form-check-input" type="radio" name="vegetarian" value="Vegetarian" checked={pizza ? pizza.vegetarian : null} onChange={(e) => props.vegChange(e.target.value)}/>
             <label className="form-check-label">
               Vegetarian
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="radio" value="Not Vegetarian" checked={pizza ? !pizza.vegetarian : null} onChange={(e) => props.vegChange(e.target.value)}/>
+            <input className="form-check-input" type="radio" name="vegtarian" value="Not Vegetarian" checked={pizza ? !pizza.vegetarian : null} onChange={(e) => props.vegChange(e.target.value)}/>
             <label className="form-check-label">
               Not Vegetarian
             </label>
